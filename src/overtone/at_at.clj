@@ -260,7 +260,7 @@
   (let [pool-info  @(:pool-atom pool)]
     (schedule-at pool-info fun delay-ms desc re-throw-caught-exceptions?)))
 
-(defn- shutdown-pool!
+(defn shutdown-pool!
   [pool-info strategy]
   (case strategy
     :stop (shutdown-pool-gracefully! pool-info)
