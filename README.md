@@ -26,10 +26,18 @@
                                  \__,_/\__/       \__,_/\__/
 
 
-
 ### at-at
 
 Simple ahead-of-time function scheduler. Allows you to schedule the execution of an anonymous function for a point in the future.
+
+#### This Fork
+This fork was created to service pull requests left unmerged at https://github.com/overtone/at-at, you can pull it in to your leiningen project by adding:
+
+```clj
+[silasdavis/at-at "1.2.0"]
+```
+
+to your project.clj dependencies. See: https://clojars.org/silasdavis/at-at.
 
 ### Basic Usage
 
