@@ -4,5 +4,6 @@ pom.xml
 *.war
 lib
 classes
-build
 /at-at
+build
+target
