@@ -87,7 +87,7 @@ Finally, you can also schedule tasks for a fixed delay (vs a rate):
 (every 1000 #(println "I am cool!") my-pool :fixed-delay true)
 ```
 
-This means that it will wait 1000 ms after the task is completed before 
+This means that it will wait 1000 ms after the task is completed before
 starting the next one.
 
 ### Resetting a pool.
