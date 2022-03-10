@@ -13,3 +13,10 @@ _28th May 2013_
 * BREAKING CHANGE - Remove support for specifying stop-delayed? and
   stop-periodic? scheduler strategies.
 * Jobs now correctly report as no longer being scheduled when pool is shutdown.
+
+## 1.3.1
+_10th March 2022_
+
+* Added some simple tests
+* Updated readme
+* Brought in changes from 1.3.0 that handle exceptions better
