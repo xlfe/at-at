@@ -1,24 +1,3 @@
-                                            ________
-                                        _,.-Y  |  |  Y-._
-                                    .-~"   ||  |  |  |   "-.
-                                    I" ""=="|" !""! "|"[]""|     _____
-                                    L__  [] |..------|:   _[----I" .-{"-.
-                                   I___|  ..| l______|l_ [__L]_[I_/r(=}=-P
-                                  [L______L_[________]______j~  '-=c_]/=-^
-                                   \_I_j.--.\==I|I==_/.--L_]
-                                     [_((==)[`-----"](==)j
-                                        I--I"~~"""~~"I--I
-                                        |[]|         |[]|
-                                        l__j         l__j
-                                        |!!|         |!!|
-                                        |..|         |..|
-                                        ([])         ([])
-                                        ]--[         ]--[
-                                        [_L]         [_L]  -Row
-                                       /|..|\       /|..|\
-                                      `=}--{='     `=}--{='
-                                     .-^--r-^-.   .-^--r-^-.
-                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                                           __               __
                                    ____ _/ /_       ____ _/ /_
                                   / __ `/ __/______/ __ `/ __/
@@ -30,14 +9,22 @@
 
 Simple ahead-of-time function scheduler. Allows you to schedule the execution of an anonymous function for a point in the future.
 
+Works with babashka too.
+
 #### This Fork
-This fork was created to service pull requests left unmerged at https://github.com/overtone/at-at, you can pull it in to your leiningen project by adding:
+
+This fork was created to combine a few at-at forks and to add some (simple) tests.
+
+* Original repo https://github.com/overtone/at-at
+* Updates to add exception handling https://github.com/liftoffio/at-at
+* Updates that fixed the printing of dates (to see am vs pm) https://github.com/adamneilson/at-at
+
+Checkout the source to get the low-down -the readme below is somewhat out of date (PRs welcome!)
 
 ```clj
-[silasdavis/at-at "1.2.1"]
+[net.xlfe/at-at "1.3.1"]
 ```
-
-to your project.clj dependencies. See: https://clojars.org/silasdavis/at-at.
+to your project.clj dependencies. See: https://clojars.org/net.xlfe/at-at
 
 ### Basic Usage
 
@@ -61,7 +48,7 @@ Next, schedule the function of your dreams. Here we schedule the function to exe
 (at (+ 1000 (now)) #(println "hello from the past!") my-pool)
 ```
 
-You may also specify a description for the scheduled task with the optional `:desc` key.
+You may also specify a description for the scheduled task using an opts map with a `:desc` key.
 
 Another way of achieving the same result is to use `after` which takes a delaty time in ms from now:
 
@@ -118,27 +105,19 @@ You may forcefully reset the pool using the `:kill` strategy:
 
 ```clj
 (def tp (mk-pool))
-(after 10000 #(println "hello") tp :desc "Hello printer")
-(every 5000 #(println "I am still alive!") tp :desc "Alive task")
+(after 10000 #(println "hello") tp {:desc "Hello printer"})
+(every 5000 #(println "I am still alive!") tp {:desc "Alive task"})
 (show-schedule tp)
 ;; [6][RECUR] created: Thu 12:03:35s, period: 5000ms,  desc: "Alive task
 ;; [5][SCHED] created: Thu 12:03:32s, starts at: Thu 12:03:42s, desc: "Hello printer
 ```
 
-### Install
-
-Fetch at-at from github: https://github.com/overtone/at-at or pull from clojars: `[overtone/at-at "X.Y.Z"]`
-
 ### History
 
 at-at was extracted from the awesome music making wonder that is Overtone (http://github.com/overtone/overtone)
-
 
 ### Authors
 
 * Sam Aaron
 * Jeff Rose
 * Michael Neale
-
-
-(Ascii art borrowed from http://www.sanitarium.net/jokes/getjoke.cgi?132)
