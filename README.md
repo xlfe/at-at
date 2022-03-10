@@ -21,7 +21,7 @@ This fork was created to combine a few at-at forks and to add some (simple) test
 
 Checkout the source to get the low-down -the readme below is somewhat out of date (PRs welcome!)
 
-![Clojars Version](https://img.shields.io/clojars/v/net.xlfe/at-at)
+[![Clojars Project](https://img.shields.io/clojars/v/net.xlfe/at-at.svg)](https://clojars.org/net.xlfe/at-at)
 
 ### Basic Usage
 
