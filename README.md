@@ -21,10 +21,7 @@ This fork was created to combine a few at-at forks and to add some (simple) test
 
 Checkout the source to get the low-down -the readme below is somewhat out of date (PRs welcome!)
 
-```clj
-[net.xlfe/at-at "1.3.1"]
-```
-to your project.clj dependencies. See: https://clojars.org/net.xlfe/at-at
+![Clojars Version](https://img.shields.io/clojars/v/net.xlfe/at-at)
 
 ### Basic Usage
 
